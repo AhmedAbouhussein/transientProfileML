@@ -10,13 +10,13 @@ t = np.linspace(0, 10, L)
 decay = np.exp(-0.3 * t) * np.sin(2 * np.pi * 1.5 * t)
 
 # Signal 2: Chirp (linearly increasing frequency)
-f0, f1 = 0.5, 5.0
+f0, f1 = 0.5, 2.0
 phase = 2 * np.pi * (f0 * t + 0.5 * (f1 - f0) / t[-1] * t**2)
 chirp = np.sin(phase)
 
 # Signal 3: Multi-Scale Sine (low-freq carrier + high-freq ripple)
-carrier = np.sin(2 * np.pi * 0.3 * t)
-ripple = 0.3 * np.sin(2 * np.pi * 8.0 * t)
+carrier = np.sin(2 * np.pi * 0.15 * t)
+ripple = 0.6 * np.sin(2 * np.pi * 5.0 * t)
 multiscale = carrier + ripple
 
 # %%
